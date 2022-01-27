@@ -1,0 +1,57 @@
+/*html,body{
+	font-family: sans-serif;
+	background-color: #333;
+	color: #eee;
+}
+
+h2{
+	color: #458688;
+	font-size: 23px;
+}
+
+hr{
+	margin-top: 40px;
+	margin-bottom: 30px;
+	opacity: 0.2;
+}
+
+div{
+	text-align: center;
+	font-weight: bold;
+}
+
+/*end reset*/
+
+/*colors*/
+/*.red{
+	background-color: #e74c3c;
+}
+
+.green{
+	background-color: #1abc9c;
+}
+
+.blue{
+	background-color:  #3498db;
+}
+
+.yellow{
+	background-color: #f1c40f;
+}*/
+
+body {
+  background: 0 -100px repeat-x url(bg_gallery.png) #4F191A;
+  margin: 10px;
+}
+
+img {
+  display: none;
+}
+
+table {
+  margin: 0 auto;
+}
+
+td {
+  padding: 15px;
+}

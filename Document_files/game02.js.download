@@ -1,0 +1,183 @@
+/*var c=document.getElementById("UgCanvas");
+var ctx=c.getContext("2d");
+ctx.fillStyle="#7F7F00";
+ctx.fillRect(0,0,150,100);*/
+
+/*var c=document.getElementById("UgCanvas");
+var ctx=c.getContext("2d");
+ctx.fillStyle="#7F7F00";
+ctx.beginPath();
+ctx.arc(90,50,50,0,Math.PI*2,true);
+ctx.closePath();
+ctx.fill();*/
+
+/*var c=document.getElementById("UgCanvas");
+var ctx=c.getContext("2d");
+ctx.moveTo(10,10);
+ctx.lineTo(150,50);
+ctx.lineTo(50,160);
+ctx.stroke();*/
+
+ /*window.onload = function() {
+        var canvas = document.getElementById("UgCanvas");
+        var context = canvas.getContext("2d");
+ 
+        context.font = "italic 40pt arial";
+        context.fillText("Canvas Tutorial.", 10, 100);
+      };*/
+ /*window.onload = function() {
+        var canvas = document.getElementById("UgCanvas");
+        var context = canvas.getContext("2d");
+ 
+        context.font = "italic 40pt arial";
+        context.fillText("Canvas Tutorial.", 10, 100);
+      };*/
+
+/*var canvas = document.getElementById('tutorial');
+
+if (canvas.getContext){
+  var ctx = canvas.getContext('2d');
+  // codigo de desenho aqui
+} else {
+  // codigo para quando o canvas nao for suportado aqui
+}*/
+
+  /*function draw() {
+      var canvas = document.getElementById("tutorial");
+      if (canvas.getContext) {
+        var ctx = canvas.getContext("2d");
+
+        ctx.fillStyle = "rgb(200,0,0)";
+        ctx.fillRect (10, 10, 55, 50);
+
+        ctx.fillStyle = "rgba(0, 0, 200, 0.5)";
+        ctx.fillRect (30, 30, 55, 50);
+      }
+    }*/
+
+   /* function draw() {
+  var canvas = document.getElementById('tutorial');
+  if (canvas.getContext) {
+    var ctx = canvas.getContext('2d');
+
+    ctx.fillRect(25, 25, 100, 100);
+    ctx.clearRect(45, 45, 60, 60);
+    ctx.strokeRect(50, 50, 50, 50);
+  }
+}*/
+
+/*function draw() {
+  var canvas = document.getElementById('canvas');
+  if (canvas.getContext){
+    var ctx = canvas.getContext('2d');
+
+    ctx.beginPath();
+    ctx.moveTo(75,50);
+    ctx.lineTo(100,75);
+    ctx.lineTo(100,25);
+    ctx.fill();
+  }
+}*/
+
+/*function draw() {
+  var canvas = document.getElementById('canvas');
+  if (canvas.getContext) {
+    var ctx = canvas.getContext('2d');
+
+    ctx.beginPath();
+    ctx.arc(75, 75, 50, 0, Math.PI * 2, true); // Círculo exterior
+    ctx.moveTo(110, 75);
+    ctx.arc(75, 75, 35, 0, Math.PI, false);  // Boca (sentido horário)
+    ctx.moveTo(65, 65);
+    ctx.arc(60, 65, 5, 0, Math.PI * 2, true);  // Olho esquerdo
+    ctx.moveTo(95, 65);
+    ctx.arc(90, 65, 5, 0, Math.PI * 2, true);  // Olho direito
+    ctx.stroke();
+  }
+}*/
+
+/*function draw() {
+  var canvas = document.getElementById('canvas');
+  if (canvas.getContext){
+    var ctx = canvas.getContext('2d');
+
+    // Filled triangle
+    ctx.beginPath();
+    ctx.moveTo(25,25);
+    ctx.lineTo(105,25);
+    ctx.lineTo(25,105);
+    ctx.fill();
+
+    // Stroked triangle
+    ctx.beginPath();
+    ctx.moveTo(125,125);
+    ctx.lineTo(125,45);
+    ctx.lineTo(45,125);
+    ctx.closePath();
+    ctx.stroke();
+  }
+}*/
+
+
+//Criar uma imagem do zero
+/*function draw() {
+  var ctx = document.getElementById('canvas').getContext('2d');
+  ctx.font = '48px serif';
+  ctx.strokeText('Hello world', 10, 50);
+}*/
+
+/*var img = new Image();   // Create new img element
+img.src = 'myImage.png'; // Set source path*/
+
+/*var img = new Image();   // Create new img element
+img.addEventListener('load', function() {
+  // execute drawImage statements here
+}, false);
+img.src = 'myImage.png'; // Set source path*/
+
+//Incorporando uma imagem por meio de dados: URL
+/*var img = new Image();   // Create new img element
+img.src = 'data:image/gif;base64,R0lGODlhCwALAIAAAAAA3pn/ZiH5BAEAAAEALAAAAAALAAsAAAIUhA+hkcuO4lmNVindo7qyrIXiGBYAOw==';
+*/
+
+//Usando frames de um vídeo
+/*function getMyVideo() {
+  var canvas = document.getElementById('canvas');
+  if (canvas.getContext) {
+    var ctx = canvas.getContext('2d');
+
+    return document.getElementById('assets/fish-080.gif');
+  }
+}*/
+
+function draw() {
+
+  // Loop through all images
+  for (var i = 0; i < document.images.length; i++) {
+
+    // Don't add a canvas for the frame image
+    if (document.images[i].getAttribute('id') != 'frame') {
+
+      // Create canvas element
+      canvas = document.createElement('canvas');
+      canvas.setAttribute('width', 132);
+      canvas.setAttribute('height', 150);
+
+      // Insert before the image
+      document.images[i].parentNode.insertBefore(canvas,document.images[i]);
+
+      ctx = canvas.getContext('2d');
+
+      // Draw image to canvas
+      ctx.drawImage(document.images[i], 15, 20);
+
+      // Add frame
+      ctx.drawImage(document.getElementById('frame'), 0, 0);
+    }
+  }
+ctx.mozImageSmoothingEnabled = false;
+ctx.webkitImageSmoothingEnabled = false;
+ctx.msImageSmoothingEnabled = false;
+ctx.imageSmoothingEnabled = false;
+}
+
